@@ -1,0 +1,22 @@
+/* Style for the menu container */
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the dropdown button */
+.menubtn {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  min-width: 200px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.menubtn:hover, .menubtn:focus {
+    background-color: #88d0ff;
+  }
+
