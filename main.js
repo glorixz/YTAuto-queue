@@ -93,9 +93,11 @@ function handleClickEvent(event) {
   videoIds = videoIds.reverse(); // oldest video first
 
   // construct a playlist link
-  const limit = 100; // avoid getting too close to URL character limit
+  const limit = 50; // anonymous playlists can only hold up to 50 videos
   videoIds = videoIds.slice(0, limit);
-  let playlistLink = "https://www.youtube.com/watch_videos?video_ids=" + videoIds.join(',');
+  // Not working at the moment
+  // let playlistLink = "https://www.youtube.com/watch_videos?video_ids=" + videoIds.join(',');
+  let playlistLink = "https://www.youtube.com/embed/?playlist=" + videoIds.join(',');
 
   // send a message to popup.js which has the tab creation capability
   chrome.runtime.sendMessage({ action: 'openNewTab', url: playlistLink });
