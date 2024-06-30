@@ -95,9 +95,8 @@ function handleClickEvent(event) {
   // construct a playlist link
   const limit = 50; // anonymous playlists can only hold up to 50 videos
   videoIds = videoIds.slice(0, limit);
-  // Not working at the moment
-  // let playlistLink = "https://www.youtube.com/watch_videos?video_ids=" + videoIds.join(',');
-  let playlistLink = "https://www.youtube.com/embed/?playlist=" + videoIds.join(',');
+  let playlistLink = "https://www.youtube.com/watch_videos?video_ids=" + videoIds.join(',');
+  // let playlistLink = "https://www.youtube.com/embed/?playlist=" + videoIds.join(',');
 
   // send a message to popup.js which has the tab creation capability
   chrome.runtime.sendMessage({ action: 'openNewTab', url: playlistLink });
