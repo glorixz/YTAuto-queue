@@ -42,7 +42,7 @@ function updateHighlight(target, vidLink) {
 // Returns null for non-video elements.
 function getVideoEl(element) {
   // query for the element encompassing a yt video thumbnail/title card
-  const selector = 'ytd-rich-grid-row ytd-rich-item-renderer';
+  const selector = 'ytd-rich-item-renderer ytd-rich-grid-media';
   
   if (element.matches(selector)) {
     return element;
