@@ -9,8 +9,7 @@ document.addEventListener('mouseover', handleMouseOver);
 function handleMouseOver(event) {
   let vidEl = getVideoEl(event.target);
   if (vidEl != null) {
-    
-    let linkEl = vidEl.querySelector('#video-title-link');
+    let linkEl = vidEl.querySelector('a');
 
     updateHighlight(vidEl, linkEl.href);
   }
@@ -42,7 +41,7 @@ function updateHighlight(target, vidLink) {
 // Returns null for non-video elements.
 function getVideoEl(element) {
   // query for the element encompassing a yt video thumbnail/title card
-  const selector = 'ytd-rich-item-renderer ytd-rich-grid-media';
+  const selector = 'ytd-rich-item-renderer yt-lockup-view-model';
   
   if (element.matches(selector)) {
     return element;
@@ -80,7 +79,7 @@ function handleClickEvent(event) {
   
   // get all video IDs preceding (newer than) the selected video
   const vidtype = "subscriptions";
-  const titleEls = document.querySelectorAll("ytd-two-column-browse-results-renderer[page-subtype='" + vidtype + "'] a#video-title-link");
+  const titleEls = document.querySelectorAll("ytd-two-column-browse-results-renderer[page-subtype='" + vidtype + "'] a.yt-lockup-metadata-view-model__title");
   let videoIds = [];
 
   for (const title of titleEls) {
