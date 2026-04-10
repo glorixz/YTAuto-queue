@@ -23,6 +23,6 @@ document.getElementById('startbtn').addEventListener('click', executeQueuing);
 // when main.js has generated a playlist URL, open it in a new tab
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     if (message.action === 'openNewTab') {
-      chrome.tabs.create({ url: message.url });
+        chrome.tabs.create({ url: message.url });
     }
 });

@@ -79,7 +79,7 @@ function handleClickEvent(event) {
   
   // get all video IDs preceding (newer than) the selected video
   const vidtype = "subscriptions";
-  const titleEls = document.querySelectorAll("ytd-two-column-browse-results-renderer[page-subtype='" + vidtype + "'] a.yt-lockup-metadata-view-model__title");
+  const titleEls = document.querySelectorAll("ytd-two-column-browse-results-renderer[page-subtype='" + vidtype + "'] a.ytLockupMetadataViewModelTitle");
   let videoIds = [];
 
   for (const title of titleEls) {
